@@ -7,8 +7,8 @@ const progressBar = player.querySelector('.progress__filled');
 const toggle = player.querySelector('.toggle');
 const skipButtons = player.querySelectorAll('[data-skip]');
 const ranges = player.querySelectorAll('.player__slider');
-// const volumeIcon = document.getElementById('.player__icon');
 
+const button = player.querySelectorAll(".volume");
 
 /* ========== Build out functions ========== */
 
@@ -27,8 +27,18 @@ function skip() {
  video.currentTime += parseFloat(this.dataset.skip);
 }
 
+var lastHigh = ranges[0].value;
+
 function handleRangeUpdate() {
   video[this.name] = this.value;
+  if(this.name == 'volume'){
+    lastHigh = this.value
+    if(this.value == 0){
+      button[0].textContent = '🔈'
+      // console.log(button[0])
+    }else 
+      button[0].textContent = '🔊'
+  }
 }
 
 function handleProgress() {
@@ -41,12 +51,17 @@ function scrub(e) {
   video.currentTime = scrubTime;
 }
 
-// function updateVolume() {
-//   const i = .value > 0 ? '🔊' : '🔈';
-//   e.textContent = i;
-//   console.log(this.textContent);
-//   console.log(1)
-// }
+function updateVolume() {
+  if(this.textContent === '🔊'){
+    this.textContent = '🔈';
+    ranges[0].value = 0;
+  }
+  else if(lastHigh > 0){
+    this.textContent = '🔊';
+    ranges[0].value = lastHigh;
+  }
+  video['volume'] = ranges[0].value
+}
 /* ========== Hook up the event listeners ========== */
 
 video.addEventListener('click', togglePlay);
@@ -54,7 +69,7 @@ video.addEventListener('play', updateButton);
 video.addEventListener('pause', updateButton);
 video.addEventListener('timeupdate', handleProgress);
 
-// volumeIcon.addEventListener('click', updateVolume);
+button.forEach(button => button.addEventListener('click', updateVolume));
 
 toggle.addEventListener('click', togglePlay);
 skipButtons.forEach(button => button.addEventListener('click', skip));
