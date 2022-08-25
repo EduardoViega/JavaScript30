@@ -1,0 +1,21 @@
+body{
+    background: url(../img/background.webp) center fixed;
+    display: flex;
+    justify-content: center;
+    text-align: center;    
+}
+
+ul{
+    background-color: white;
+    width: max-content;
+    margin: 50px 0;
+    padding: 5px 40px 10px 40px;
+    border-radius: 5px;
+}
+
+li{
+    padding: 5px 20px 5px 10px; 
+    border-bottom: 2px solid #efefef;
+}
+
+li:last-child{border-bottom: 0;}
