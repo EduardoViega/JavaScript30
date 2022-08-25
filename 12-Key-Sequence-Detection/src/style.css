@@ -3,4 +3,11 @@ html{
     display: flex;
     align-items: center;
     justify-content: center;
+    background: url(../img/background.webp) center;
+}
+
+p{
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
 }

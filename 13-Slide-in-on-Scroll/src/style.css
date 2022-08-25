@@ -1,6 +1,6 @@
 html {
     box-sizing: border-box;
-    background: #ccc;
+    background: url(../img/background.webp) center fixed;
     font-family: 'helvetica neue';
     font-size: 20px;
     font-weight: 200;

@@ -12,7 +12,7 @@ body {
     display: flex;
     background: #ffffff;
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffffff 0%, #aaaaaa 50%, #555555 100%);
+    background: url(../img/background.webp);
     background-size: cover;
     align-items: center;
     justify-content: center;
