@@ -1,8 +1,6 @@
 # JavaScript 30
 
->30 Day Vanilla JS Coding Challenge
-
->Build 30 things in 30 days with 30 tutorials
+Vanilla JS Coding Challenge
 
 >No Frameworks×No Compilers×No Libraries×No Boilerplate
 
